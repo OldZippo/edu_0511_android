@@ -163,7 +163,14 @@
       <option name="project" value="LOCAL" />
       <updated>1621026236574</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Интерфейс приложения">
+      <created>1621026488621</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1621026488621</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -192,10 +199,10 @@
       <screen x="1680" y="21" width="1280" height="984" />
     </state>
     <state x="1820" y="157" key="SettingsEditor/0.0.1680.1010/1680.21.1280.984@1680.21.1280.984" timestamp="1620984794698" />
-    <state x="1911" y="245" key="Vcs.Push.Dialog.v2" timestamp="1621026301432">
+    <state x="1911" y="245" key="Vcs.Push.Dialog.v2" timestamp="1621027089605">
       <screen x="1680" y="21" width="1280" height="984" />
     </state>
-    <state x="1911" y="245" key="Vcs.Push.Dialog.v2/0.0.1680.1010/1680.21.1280.984@1680.21.1280.984" timestamp="1621026301432" />
+    <state x="1911" y="245" key="Vcs.Push.Dialog.v2/0.0.1680.1010/1680.21.1280.984@1680.21.1280.984" timestamp="1621027089605" />
     <state x="2136" y="426" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1621026122022">
       <screen x="1680" y="21" width="1280" height="984" />
     </state>
