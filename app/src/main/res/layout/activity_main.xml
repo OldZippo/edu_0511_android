@@ -38,7 +38,7 @@
             android:layout_marginRight="10dp"
             android:layout_weight="0"
             android:background="#4CAF50"
-            android:text="Да"
+            android:text="@string/yes"
             android:textColor="#FFFFFF"
             android:textSize="20sp" />
 
@@ -50,7 +50,7 @@
             android:layout_marginLeft="10dp"
             android:layout_weight="0"
             android:background="#E91E63"
-            android:text="Нет"
+            android:text="@string/no"
             android:textColor="#FFFFFF"
             android:textSize="20sp" />
     </LinearLayout>

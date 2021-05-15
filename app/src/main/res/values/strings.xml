@@ -1,3 +1,19 @@
 <resources>
     <string name="app_name">firstapp</string>
+    <string name="correct">Правильно</string>
+    <string name="incorrect">Не правильно</string>
+    <string name="yes">Да </string>
+    <string name="no">Нет</string>
+    //Вопросы
+    <string name="question0">Есть ли на свете нефтяные мухи?</string>
+    <string name="question1">Ромашка является символом Дня любви?</string>
+    <string name="question2">Правда ли что утром и вечером у человека разный рост?</string>
+    <string name="question3">Саламандры могут жить в огне?</string>
+    <string name="question4">Правда, что до семи месяцев ребёнок может одновременно дышать и глотать?</string>
+    <string name="question5">Может ли температура человека подняться выше 42 градусов?</string>
+    <string name="question6">Природный газ имеет запах?</string>
+    <string name="question7">Два отца и два сына пошли на рыбалку и каждый принёс по 1 рыбе. Всего 3 рыбы. Такое может быть?</string>
+    <string name="question8">Коала - медведь?</string>
+    <string name="question9">Коттон и хлопок это одно и тоже?</string>
+
 </resources>
