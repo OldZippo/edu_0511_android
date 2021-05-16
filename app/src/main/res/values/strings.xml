@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">firstapp</string>
     <string name="correct">Правильно</string>
-    <string name="incorrect">Не правильно</string>
+    <string name="incorrect">Неправильно</string>
     <string name="yes">Да </string>
     <string name="no">Нет</string>
     //Вопросы
