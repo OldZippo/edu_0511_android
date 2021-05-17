@@ -1,6 +1,7 @@
 
 package com.example.firstapp;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -40,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
 
         yesBtn = findViewById(R.id.btnYes);
         noBtn = findViewById(R.id.btnNo);
+        showAnswer = findViewById(R.id.showAnswer);
         textView = findViewById(R.id.textView);
         textView.setText(questions[questionIndex].getQuestionResId());
 
@@ -65,6 +67,14 @@ public class MainActivity extends AppCompatActivity {
 
                 questionIndex = (questionIndex+1)%questions.length;
                 textView.setText(questions[questionIndex].getQuestionResId());
+            }
+        });
+        showAnswer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, AnswerActivity.class);
+                intent.putExtra("answer", questions[questionIndex].isAnswerTrue());
+                startActivity(intent);
             }
         });
     }
