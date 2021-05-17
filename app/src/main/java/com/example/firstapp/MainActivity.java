@@ -28,6 +28,19 @@ public class MainActivity extends AppCompatActivity {
             new Question(R.string.question8, false),
             new Question(R.string.question9, true)
     };
+   private Answer[] answers = new Answer[]{
+            new Answer(R.string.answer0,true),
+            new Answer(R.string.answer1,true),
+            new Answer(R.string.answer2,true),
+            new Answer(R.string.answer3,false),
+            new Answer(R.string.answer4,true),
+            new Answer(R.string.answer5, true),
+            new Answer(R.string.answer6, false),
+            new Answer(R.string.answer7, true),
+            new Answer(R.string.answer8, false),
+            new Answer(R.string.answer9, true)
+    };
+
     private int questionIndex = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,7 +86,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, AnswerActivity.class);
-                intent.putExtra("answer", questions[questionIndex].isAnswerTrue());
+               // intent.putExtra("answer", questions[questionIndex].isAnswerTrue());
+                intent.putExtra("answer", (answers[questionIndex].isAnswerTrue()));
                 startActivity(intent);
             }
         });
