@@ -28,19 +28,18 @@ public class MainActivity extends AppCompatActivity {
             new Question(R.string.question8, false),
             new Question(R.string.question9, true)
     };
-   private Answer[] answers = new Answer[]{
-            new Answer(R.string.answer0,true),
-            new Answer(R.string.answer1,true),
-            new Answer(R.string.answer2,true),
-            new Answer(R.string.answer3,false),
-            new Answer(R.string.answer4,true),
-            new Answer(R.string.answer5, true),
-            new Answer(R.string.answer6, false),
-            new Answer(R.string.answer7, true),
-            new Answer(R.string.answer8, false),
-            new Answer(R.string.answer9, true)
+    private String[] answers = {
+            "Есть такой вид мух под названием Имаго, которые способны выжить в едкой среде нефти.",
+            "Ромашка является символом Дня любви, который отмечается 8 июля.",
+            "Это связано с сжатием суставов и рост может уменьшаться на 1-2 см. к вечеру.",
+            "Ни одно животное на земле не может выжить в огне.",
+            "Это действительно так",
+            "Врачами была зафиксирована температура больного 46,5 градусов и после лечения он был выписан здоровым.",
+            "Природный газ ничем не пахнет, а запах специально добавляют, чтобы можно было обнаружить утечку.",
+            "На рыбалку пошли дедушка, папа и внук.",
+            "Коала это сумчатое млекопитающее и к медведям никакого отношения не имеет.",
+            "Коттон и хлопок - это один и тот же материал. С английского \"cotton\", \"коттон\" переводится - хлопок."
     };
-
     private int questionIndex = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,7 +56,6 @@ public class MainActivity extends AppCompatActivity {
         showAnswer = findViewById(R.id.showAnswer);
         textView = findViewById(R.id.textView);
         textView.setText(questions[questionIndex].getQuestionResId());
-
         yesBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -86,8 +84,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, AnswerActivity.class);
-               // intent.putExtra("answer", questions[questionIndex].isAnswerTrue());
-                intent.putExtra("answer", (answers[questionIndex].isAnswerTrue()));
+                intent.putExtra("answer", questions[questionIndex].isAnswerTrue());
+                intent.putExtra("answerText", answers[questionIndex]);
                 startActivity(intent);
             }
         });

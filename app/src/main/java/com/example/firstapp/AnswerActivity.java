@@ -6,7 +6,9 @@ import android.widget.TextView;
 
 public class AnswerActivity extends AppCompatActivity {
     private TextView answerTextView;
+    private TextView TextView2;
     private  boolean isAnswerTrue;
+    private String textAnswer;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,6 +23,8 @@ public class AnswerActivity extends AppCompatActivity {
         } else {
             answerTextView.setText(R.string.no);
         } */
-
+        textAnswer = getIntent().getStringExtra("answerText");
+        TextView2 = findViewById(R.id.textView2);
+        TextView2.setText(textAnswer);
     }
 }
