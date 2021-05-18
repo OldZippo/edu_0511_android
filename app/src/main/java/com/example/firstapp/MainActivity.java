@@ -15,7 +15,9 @@ public class MainActivity extends AppCompatActivity {
     private Button yesBtn;
     private Button noBtn;
     private Button showAnswer;
+    private Button showResult;
     private TextView textView;
+    private String[] textResult = new String[10];
     private Question[] questions = new Question[]{
             new Question(R.string.question0,true),
             new Question(R.string.question1,true),
@@ -50,7 +52,6 @@ public class MainActivity extends AppCompatActivity {
         if(savedInstanceState != null) {
             questionIndex = savedInstanceState.getInt("questionIndex");
         }
-
         yesBtn = findViewById(R.id.btnYes);
         noBtn = findViewById(R.id.btnNo);
         showAnswer = findViewById(R.id.showAnswer);
@@ -59,25 +60,37 @@ public class MainActivity extends AppCompatActivity {
         yesBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(questions[questionIndex].isAnswerTrue())
-                    Toast.makeText(MainActivity.this,R.string.correct,Toast.LENGTH_SHORT).show();
-                else
-                    Toast.makeText(MainActivity.this,R.string.incorrect,Toast.LENGTH_SHORT).show();
+                if(questions[questionIndex].isAnswerTrue()) {
+                    Toast.makeText(MainActivity.this, R.string.correct, Toast.LENGTH_SHORT).show();
+                    textResult[questionIndex] = "Правильно!";
+                }else {
+                    Toast.makeText(MainActivity.this, R.string.incorrect, Toast.LENGTH_SHORT).show();
+                    textResult[questionIndex] = "Неправильно!";
+                }
 
                 questionIndex = (questionIndex+1)%questions.length;
                 textView.setText(questions[questionIndex].getQuestionResId());
+                if (questionIndex == 0) {
+                    showResultat();
+                }
             }
         });
         noBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(questions[questionIndex].isAnswerTrue())
-                    Toast.makeText(MainActivity.this,R.string.incorrect,Toast.LENGTH_SHORT).show();
-                else
-                    Toast.makeText(MainActivity.this,R.string.correct,Toast.LENGTH_SHORT).show();
+                if(questions[questionIndex].isAnswerTrue()) {
+                    Toast.makeText(MainActivity.this, R.string.incorrect, Toast.LENGTH_SHORT).show();
+                    textResult[questionIndex] = "Неправильно!";
+                }else {
+                    Toast.makeText(MainActivity.this, R.string.correct, Toast.LENGTH_SHORT).show();
+                    textResult[questionIndex] = "Правильно!";
+                }
 
                 questionIndex = (questionIndex+1)%questions.length;
                 textView.setText(questions[questionIndex].getQuestionResId());
+                if (questionIndex == 0) {
+                    showResultat();
+                }
             }
         });
         showAnswer.setOnClickListener(new View.OnClickListener() {
@@ -120,5 +133,10 @@ public class MainActivity extends AppCompatActivity {
     public void onDestroy() {
         super.onDestroy();
         Log.d("SYSTEM INFO: ", "Метод onDestroy() запущен");
+    }
+    void showResultat() {
+        Intent intent = new Intent(MainActivity.this, ResultActivity.class);
+        intent.putExtra("answer_Text",textResult);
+        startActivity(intent);
     }
 }
