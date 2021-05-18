@@ -57,6 +57,7 @@ public class MainActivity extends AppCompatActivity {
         showAnswer = findViewById(R.id.showAnswer);
         textView = findViewById(R.id.textView);
         textView.setText(questions[questionIndex].getQuestionResId());
+
         yesBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
