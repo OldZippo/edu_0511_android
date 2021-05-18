@@ -61,7 +61,6 @@ public class ResultActivity extends AppCompatActivity {
         textResult9 = findViewById(R.id.textResult9);
         textResult9.setText(textResult[9]);
         ColorizeResult(textResult9);
-
     }
     void ColorizeResult(TextView textResult) {
         String text;
