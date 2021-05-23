@@ -1,10 +1,13 @@
  package com.example.secondapp;
 
+ import android.content.Intent;
  import android.os.Bundle;
  //import android.support.v7.app.AppCompatActivity;
  import android.util.Log;
  import android.view.LayoutInflater;
+ import android.view.View;
  import android.view.ViewGroup;
+ import android.widget.Button;
  import android.widget.TextView;
 
  import androidx.appcompat.app.AppCompatActivity;
@@ -18,19 +21,37 @@
 
     RecyclerView recyclerView;
     UserAdapter userAdapter;
+    Button addUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         recyclerView = findViewById(R.id.recyclerview);
+        addUser = findViewById(R.id.addUser);
         recyclerView.setLayoutManager(new LinearLayoutManager(MainActivity.this));
-        Users users = new Users();
+        Log.d("SYSTEM INFO: ", "Конструктор onCreate() запущен");
+
+        addUser.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, AddUserActivity.class);
+                startActivity(intent);
+            }
+        });
+    }
+    public void onResume() {
+        super.onResume();
+        RecyclerViewInit();
+    }
+
+    private void RecyclerViewInit() {
+        Users users = Users.get(MainActivity.this);
         List<String> userList = users.getUserList();
         userAdapter = new UserAdapter(userList);
         recyclerView.setAdapter(userAdapter);
-        Log.d("SYSTEM INFO: ", "Конструктор onCreate() запущен");
     }
+
     // UserHolder отвечает за каждый элемент списка по отдельности
     // Именно сдесь мы будем наполнять нашу activity_item контекстом
     private class UserHolder extends RecyclerView.ViewHolder {
